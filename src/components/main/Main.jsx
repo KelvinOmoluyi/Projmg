@@ -7,9 +7,9 @@ const Main = () => {
     const pagesLinks = ["Features", "Integrations", "Reviews", "Contact"];
 
     const sentence1 = "Project Management has never been easier and compact.";
-    const bigWords = sentence1.split("");
+    const bigLetters = sentence1.split("");
 
-    const smallWords = "Organize your projects, chat with your team, and get things done — all from one simple workspace.";
+    const smallLetters = "Organize your projects, chat with your team, and get things done — all from one simple workspace.";
 
 
     return (
@@ -32,7 +32,7 @@ const Main = () => {
                             <li key={index}>
                                 <a href={"#"+pagelink}>
                                     <motion.p
-                                    className="upRevealText-inline"
+                                    className="upRevealElement-inline"
                                     initial={{ filter: "blur(10px)", opacity: 0, y: 50 }}
                                     whileInView={{ filter: "blur(0px)", opacity: 1, y: 0 }}
                                     transition={{ duration: 1, delay: 0.05*index }}
@@ -72,30 +72,30 @@ const Main = () => {
                     </motion.div>
                 </div>
                 <div className="main-section-content-words-big-words h-text-gradient">
-                        {bigWords.map((bigWord, index) => (
+                        {bigLetters.map((bigLetter, index) => (
                             <motion.h1
-                            className="upRevealText-inline"
+                            className="upRevealElement-inline"
                             initial={{ filter: "blur(10px)", opacity: 0, y: 50 }}
                             whileInView={{ filter: "blur(0px)", opacity: 1, y: 0 }}
                             transition={{ duration: 0.7, delay: 0.02*index }}
                             viewport={{ once: true, amount: 1 }}
                             key={index}
                             >
-                                {bigWord === " " ? "\u00A0" : bigWord}
+                                {bigLetter === " " ? "\u00A0" : bigLetter}
                             </motion.h1>
                         ))}
                 </div>
 
                 <div className="main-section-content-words-small-words">
                     <motion.p
-                    className="upRevealText-block"
+                    className="upRevealElement-block"
                     initial={{ filter: "blur(10px)", opacity: 0, y: 50 }}
                     whileInView={{ filter: "blur(0px)", opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 1.4 }}
                     viewport={{ once: true, amount: 0.3 }}
                     onViewportEnter={() => console.log("In view")}
                     >
-                        {smallWords}
+                        {smallLetters}
                     </motion.p>
                 </div>
 
