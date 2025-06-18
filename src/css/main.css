@@ -162,12 +162,12 @@ span {
     -webkit-background-clip: text; */
 }
 
-.upRevealText-inline {
+.upRevealElement-inline {
     position: relative;
     display: inline-block;
 }
 
-.upRevealText-block {
+.upRevealElement-block {
     position: relative;
 }
 
