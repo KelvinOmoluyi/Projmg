@@ -162,10 +162,13 @@ span {
     -webkit-background-clip: text; */
 }
 
-h1.upRevealText {
+.upRevealText-inline {
     position: relative;
     display: inline-block;
-    
+}
+
+.upRevealText-block {
+    position: relative;
 }
 
 li {
@@ -190,7 +193,8 @@ hr {
     width: fit-content;
     height: -webkit-fit-content;
     height: -moz-fit-content;
-    height: fit-content;
+    display: flex;
+    justify-content: center;
 }
 
 .cta-btn-div {
