@@ -19,7 +19,7 @@ const Client = () => {
                             <h3>
                                 {title.map((word, index) => (
                                     <motion.span
-                                    className="upRevealText-inline"
+                                    className="upRevealElement-inline"
                                     initial={{ filter: "blur(10px)", opacity: 0, y: 40 }}
                                     whileInView={{ filter: "blur(0px)", opacity: 1, y: 0 }}
                                     transition={{ duration: 0.7, delay: 0.02*index }}
