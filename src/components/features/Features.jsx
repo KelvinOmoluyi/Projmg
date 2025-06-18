@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import FeatureBox from './FeatureBox';
 import Icon1 from '../../assets/img/feature-icon1.png';
 import Icon2 from '../../assets/img/feature-icon2.png';
@@ -7,6 +8,9 @@ import Icon5 from '../../assets/img/feature-icon5.png';
 import Icon6 from '../../assets/img/feature-icon6.png';
 
 const Features = () => {
+
+    const title = "Features that work for you".split("");
+    const smallTitle = "Gain invaluable predictive analytics and actionable insights, empowering your team to make data-driven decisions and close deal.";
 
     const FeatureData = [
         {id: 1, icon: Icon1, title: 'Setup Everything Fast'},
@@ -28,20 +32,45 @@ const Features = () => {
                 <div className="for-you-content">
                     <div className="for-you-content-heading">
                         <div className="for-you-content-heading-big-words h-text-gradient">
-                            <h2>Features that work for you</h2>
+                            {title.map((letter, index) => (
+                                <motion.h2
+                                className="upRevealElement-inline"
+                                initial={{ filter: "blur(10px)", opacity: 0, y: 40 }}
+                                whileInView={{ filter: "blur(0px)", opacity: 1, y: 0 }}
+                                transition={{ duration: 0.9, delay: 0.03*index }}
+                                viewport={{ once: true, amount: 1 }}
+                                key={index}
+                                >
+                                    {letter === " " ? "\u00A0" : letter}
+                                </motion.h2>
+                            ))}
                         </div>
                         <div className="for-you-content-heading-small-words">
-                            <p>Gain invaluable predictive analytics and actionable insights, empowering your
-                                team to make data-driven decisions and close deal.
-                            </p>
+                            <motion.p
+                            initial={{ filter: "blur(10px)", opacity: 0, y: 40 }}
+                            whileInView={{ filter: "blur(0px)", opacity: 1, y: 0 }}
+                            transition={{ duration: 0.9, delay: 0.9 }}
+                            viewport={{ once: true, amount: 1 }}
+                            className="upRevealElement-block"
+                            >
+                                {smallTitle}
+                            </motion.p>
                         </div>
                     </div>
 
                     <div className="for-you-content-features-container">
-                        {FeatureData.map((data) => (
-                            <li key={data.id}>
-                                <FeatureBox data={data} body={body} />
-                            </li>
+                        {FeatureData.map((data, index) => (
+                            <ul key={data.id}>
+                                <motion.div
+                                className="overflow-hidden-container-inner"
+                                initial={{ filter: "blur(10px)", opacity: 0, y: 70 }}
+                                whileInView={{ filter: "blur(0px)", opacity: 1, y: 0 }}
+                                transition={{ duration: 0.9, delay: 0.3*index }}
+                                viewport={{ once: true, amount: 0 }}
+                                >
+                                    <FeatureBox data={data} body={body} />
+                                </motion.div>
+                            </ul>
                         ))}
                     </div>
                 </div>
