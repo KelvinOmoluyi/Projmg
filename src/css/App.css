@@ -550,12 +550,18 @@ footer .footer-contents {
 
 .footer-contents-links-and-summary .column {
     width: 25%;
+    overflow: hidden;
+}
+
+.column .inner-column {
+    position: relative;
     display: flex;
     flex-direction: column;
     row-gap: 2rem;
+    width: 100%;
 }
 
-.column .heading {
+.inner-column .heading {
     color: var(--text-color-03);
     margin-bottom: 1rem;
 }
