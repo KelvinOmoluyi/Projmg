@@ -131,7 +131,7 @@ const Main = () => {
             <motion.div   
             initial={{ filter: "blur(10px)", opacity: 0, y: 50 }}
             whileInView={{ filter: "blur(0px)", opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 1 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
             viewport={{ once: true, amount: 0 }}
             className="main-section-content-dashboard">
 
