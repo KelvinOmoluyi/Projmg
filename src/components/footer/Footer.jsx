@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
     return (
-        <footer className="wrapper" id="footer">
+        <footer className="wrapper" id="Contact">
             <div className="footer-contents">
                 <div className="footer-contents-company-logo">
                     <motion.h3
