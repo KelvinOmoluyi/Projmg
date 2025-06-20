@@ -9,7 +9,7 @@ const Integrations = () => {
     const smallWords = "Seamlessly integrate with platforms like Zapier, WordPress, Shopify, Slack, Messenger, WhatsApp, Crisp, Intercom, and Zendesk."
 
     return (
-            <section className="seamless-integration wrapper" id="integrations">
+            <section className="seamless-integration wrapper" id="Integrations">
                 <div className="background-gradient"></div>
 
                 <div className="seamless-integration-content">
