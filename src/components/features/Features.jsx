@@ -26,7 +26,7 @@ const Features = () => {
 
 
     return (
-            <section className="for-you" id="#features">            
+            <section className="for-you" id="Features">            
                 <div className="background-gradient"></div>
 
                 <div className="for-you-content">
