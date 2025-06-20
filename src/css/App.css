@@ -74,6 +74,7 @@ nav .nav-sections-link {
     flex-direction: column;
     align-items: center;
     padding-top: 8rem;
+    min-height: 100vh;
 }
 
 .main-section-content-words{
