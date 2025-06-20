@@ -6,7 +6,7 @@ const Reviews = () => {
     const title = "3700+ Happy Customers".split("");
 
     return (    
-        <section className="reviews wrapper h-text-gradient" id="reviews">
+        <section className="reviews wrapper h-text-gradient" id="Reviews">
             <div className="reviews-content">
                 <div className="reviews-content-heading">
                     <div className="reviews-content-heading-tip">
