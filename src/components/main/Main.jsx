@@ -1,19 +1,19 @@
-import { filter } from 'framer-motion/client';
 import ArrowBtn from '../../assets/img/btn-arrow.png';
 import { motion } from "framer-motion";
+
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 
 const Main = () => {
     const pagesLinks = ["Features", "Integrations", "Reviews", "Contact"];
 
-    const sentence1 = "Project Management has never been easier and compact.";
-    const bigLetters = sentence1.split("");
+    const title = "Project Management has never been easier and compact.".split(" ").map(word => word.split(""));
 
     const smallLetters = "Organize your projects, chat with your team, and get things done — all from one simple workspace.";
 
 
     return (
-        <main className="main-section wrapper" id="home">
+        <main className="main-section" id="Home">
         <header>
             <nav>
                 <div className="nav-logo">
@@ -23,7 +23,7 @@ const Main = () => {
                     transition={{ duration: 0.7 }}
                     viewport={{ once: true, amount: 1 }}
                     className="overflow-hidden-container-inner">       
-                        <a href="#home"><h3>PROJ.MG</h3></a>
+                        <a href="#Home"><h3>PROJ.MG</h3></a>
                     </motion.div>
                 </div>
                 <div className="nav-sections-link">
@@ -44,22 +44,23 @@ const Main = () => {
                     </ul>
                 </div>
                 <div className="cta-btn-div">
-
-                    <motion.div
-                    initial={{ filter: "blur(10px)", opacity: 0, y: 20 }}
-                    whileInView={{ filter: "blur(0px)", opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7 }}
-                    viewport={{ once: true, amount: 1 }}
-                    className="cta-btn-01">
-                            <p>Start Today!</p>
-                            <img src={ArrowBtn} alt="button arrow" />
-                    </motion.div>
+                    <Link to="/pricing">
+                        <motion.div
+                        initial={{ filter: "blur(10px)", opacity: 0, y: 20 }}
+                        whileInView={{ filter: "blur(0px)", opacity: 1, y: 0 }}
+                        transition={{ duration: 0.7 }}
+                        viewport={{ once: true, amount: 1 }}
+                        className="cta-btn-01">
+                                <p>Start Today!</p>
+                                <img src={ArrowBtn} alt="button arrow" />
+                        </motion.div>
+                    </Link>
                 </div>
             </nav>
         </header>
 
 
-        <div className="main-section-content">
+        <div className="main-section-content wrapper">
             <div className="main-section-content-words">
                 <div className="overflow-hidden-container-outer">
                     <motion.div 
@@ -72,18 +73,22 @@ const Main = () => {
                     </motion.div>
                 </div>
                 <div className="main-section-content-words-big-words h-text-gradient">
-                        {bigLetters.map((bigLetter, index) => (
-                            <motion.h1
-                            className="upRevealElement-inline"
-                            initial={{ filter: "blur(10px)", opacity: 0, y: 50 }}
-                            whileInView={{ filter: "blur(0px)", opacity: 1, y: 0 }}
-                            transition={{ duration: 0.7, delay: 0.02*index }}
-                            viewport={{ once: true, amount: 1 }}
-                            key={index}
-                            >
-                                {bigLetter === " " ? "\u00A0" : bigLetter}
-                            </motion.h1>
-                        ))}
+                    {title.map((word, wordIndex) => (
+                        <h1 key={wordIndex} className="word-wrapper">
+                            {word.map((letter, letterIndex) => (
+                                <motion.span
+                                key={letterIndex}
+                                initial={{ filter: "blur(10px)", opacity: 0, y: 40 }}
+                                whileInView={{ filter: "blur(0px)", opacity: 1, y: 0 }}
+                                transition={{ duration: 0.7, delay: 0.015 * (wordIndex * 13 + letterIndex) }}
+                                viewport={{ once: true, amount: 1 }}
+                                className="upRevealElement-inline"
+                                >
+                                    {letter}
+                                </motion.span>
+                            ))}
+                        </h1>
+                    ))}
                 </div>
 
                 <div className="main-section-content-words-small-words">
@@ -107,13 +112,17 @@ const Main = () => {
                     viewport={{ once: true, amount: 1 }}
                     className="cta-btn-div"
                     >             
-                        <a className="cta-btn-02">
-                            <p>Start Free Trail</p>
-                            <img src={ArrowBtn} alt="button arrow" />
-                        </a>
-                        <a className="cta-btn-01">
-                            <p>Request Free Demo</p>
-                        </a>
+                        <Link to="/pricing">
+                            <div className="cta-btn-02">
+                                <p>Start Free Trail</p>
+                                <img src={ArrowBtn} alt="button arrow" />
+                            </div>
+                        </Link>
+                        <Link to="/pricing">
+                            <div className="cta-btn-01">
+                                <p>Request Free Demo</p>
+                            </div>
+                        </Link>
                     </motion.div>
                 </div>
                 <div className="main-section-content-words-card-note">
