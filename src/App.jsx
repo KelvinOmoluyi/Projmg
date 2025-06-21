@@ -1,5 +1,5 @@
 import './css/reset.css'
-import './css/Main.css'
+import './css/main.css'
 import './css/App.css'
 import Main from './components/main/Main'
 import Clients from './components/clients/Clients'
