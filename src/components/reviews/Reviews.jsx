@@ -3,7 +3,7 @@ import ClientImg from '../../assets/img/client1.png'
 
 const Reviews = () => {
 
-    const title = "3700+ Happy Customers".split("");
+    const title = "3700+ Happy Customers".split(" ").map(word => word.split(""));
 
     return (    
         <section className="reviews wrapper h-text-gradient" id="Reviews">
@@ -21,17 +21,21 @@ const Reviews = () => {
                         </motion.h5>
                     </div>
                     <div className="reviews-content-heading-big-words">
-                        {title.map((letter, index) => (  
-                            <motion.h2
-                            initial={{ filter: "blur(10px)", opacity: 0, y: 40 }}
-                            whileInView={{ filter: "blur(0px)", opacity: 1, y: 0 }}
-                            transition={{ duration: 0.9, delay: 0.03*index }}
-                            viewport={{ once: true, amount: 1 }}
-                            key={index}
-                            className="upRevealElement-inline"
-                            >
-                                {letter === " " ? "\u00A0" : letter}
-                            </motion.h2>
+                        {title.map((word, wordIndex) => (
+                            <h2 key={wordIndex} className="word-wrapper">
+                                {word.map((letter, letterIndex) => (
+                                    <motion.span
+                                    key={letterIndex}
+                                    initial={{ filter: "blur(10px)", opacity: 0, y: 40 }}
+                                    whileInView={{ filter: "blur(0px)", opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.7, delay: 0.015 * (wordIndex * 13 + letterIndex) }}
+                                    viewport={{ once: true, amount: 1 }}
+                                    className="upRevealElement-inline"
+                                    >
+                                        {letter}
+                                    </motion.span>
+                                ))}
+                            </h2>
                         ))}
                     </div>
                 </div>
@@ -67,8 +71,7 @@ const Reviews = () => {
                             100% Best Software
                         </motion.h4>
 
-                        <div 
-                        className="breakpoint1"></div>
+                        <div className="breakpoint1"></div>
 
                         <motion.p
                         initial={{ filter: "blur(10px)", opacity: 0, y: 50 }}
