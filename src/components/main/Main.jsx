@@ -7,7 +7,9 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 const Main = () => {
     const pagesLinks = ["Features", "Integrations", "Reviews", "Contact"];
 
-    const title = "Project Management has never been easier and compact.".split(" ").map(word => word.split(""));
+    const title = "Project Management has never been easier and compact."
+    .split(" ")
+    .map(word => word.split(""));
 
     const smallLetters = "Organize your projects, chat with your team, and get things done — all from one simple workspace.";
 
