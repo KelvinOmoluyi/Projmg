@@ -1,28 +1,100 @@
+.main-section-content .main-section-content-price-words {
+    padding-top: 7rem;
+    text-align: center;
+    padding-bottom: 7rem;
+}
+
+.main-section-content-price-words p {
+    color: var(--text-color-01);
+}
+
+.main-section-content-price-words .main-section-content-price-words-bigwords {
+    margin-bottom: 1rem;
+}
+
 .main-section-content .main-section-content-price-container {
     width: 100%;
-    height: calc(100vh - 10rem);
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
     margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 30rem);
+    row-gap: 3rem;
     align-items: center;
-    padding: 2rem 0 0 0;
-    display: flex;
-    flex-direction: row;
     justify-content: center;
+    padding: 2rem 0 5rem;
     -moz-column-gap: 2rem;
          column-gap: 2rem;
+}
+
+.main-section-content .price-toggle-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
 }
 
 .main-section-content-price-container .price-board {
     position: relative;
     height: 50rem;
     width: 30rem;
-    background-color: rgba(121, 121, 121, 0.068);
+    background-color: rgba(121, 121, 121, 0.04);
+    border-radius: 4rem;
+    -webkit-backdrop-filter: blur(30px);
+            backdrop-filter: blur(30px);
+    border: var(--border-01);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main-section-content-price-container .price-board.best-choice {
+    background-color: rgba(121, 121, 121, 0.15);
     border-radius: 4rem;
     -webkit-backdrop-filter: blur(30px);
             backdrop-filter: blur(30px);
     border: var(--border-01);
 }
 
-.main-section-content-price-container .price-board {
+.price-board .pricing-type {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pricing-type .best-choice-tag {
+    padding: 0.4rem 1.5rem;
+    border: var(--border-01);
+    border-radius: 3rem;
+    background-color: var(--main-color-04);
+}
+
+.pricing-type .best-choice-tag p {
+    font-size: 1.4rem;
+}
+
+.price-board .price-features p {
+    color: var(--text-color-01);
+}
+
+.price-board .cta-btn-div {
+    width: 100%;
+}
+
+.price-board .cta-btn-div .cta-btn-02 {
+    width: 26rem;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 980px) {
+
 }
