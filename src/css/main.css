@@ -162,6 +162,12 @@ span {
     -webkit-background-clip: text; */
 }
 
+.word-wrapper {
+  display: inline-block;
+  white-space: nowrap;
+  margin-right: 0.19em;
+}
+
 .upRevealElement-inline {
     position: relative;
     display: inline-block;
