@@ -9,7 +9,7 @@ import Icon6 from '../../assets/img/feature-icon6.png';
 
 const Features = () => {
 
-    const title = "Features that work for you".split("");
+    const title = "Features that work for you".split(" ").map(word => word.split(""));
     const smallTitle = "Gain invaluable predictive analytics and actionable insights, empowering your team to make data-driven decisions and close deal.";
 
     const FeatureData = [
@@ -32,17 +32,21 @@ const Features = () => {
                 <div className="for-you-content">
                     <div className="for-you-content-heading">
                         <div className="for-you-content-heading-big-words h-text-gradient">
-                            {title.map((letter, index) => (
-                                <motion.h2
-                                className="upRevealElement-inline"
-                                initial={{ filter: "blur(10px)", opacity: 0, y: 40 }}
-                                whileInView={{ filter: "blur(0px)", opacity: 1, y: 0 }}
-                                transition={{ duration: 0.9, delay: 0.03*index }}
-                                viewport={{ once: true, amount: 1 }}
-                                key={index}
-                                >
-                                    {letter === " " ? "\u00A0" : letter}
-                                </motion.h2>
+                            {title.map((word, wordIndex) => (
+                                <h2 key={wordIndex} className="word-wrapper">
+                                    {word.map((letter, letterIndex) => (
+                                        <motion.span
+                                        key={letterIndex}
+                                        initial={{ filter: "blur(10px)", opacity: 0, y: 40 }}
+                                        whileInView={{ filter: "blur(0px)", opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.7, delay: 0.015 * (wordIndex * 13 + letterIndex) }}
+                                        viewport={{ once: true, amount: 1 }}
+                                        className="upRevealElement-inline"
+                                        >
+                                        {letter}
+                                        </motion.span>
+                                    ))}
+                                </h2>
                             ))}
                         </div>
                         <div className="for-you-content-heading-small-words">
