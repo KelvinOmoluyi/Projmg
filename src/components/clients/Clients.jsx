@@ -5,23 +5,15 @@ import LogoImg3 from '../../assets/img/business-logo3.png'
 import LogoImg4 from '../../assets/img/business-logo4.png'
 import LogoImg5 from '../../assets/img/business-logo5.png'
 
-import { motion, useAnimationFrame  } from 'framer-motion';
-
-import { useEffect, useRef } from "react";
+import { motion } from 'framer-motion';
 
 const Client = () => {
     const title = "Trusted by 45,000+ founders & business owners".split(" ").map(word => word.split(""));
 
     const Logos = [LogoImg1, LogoImg2, LogoImg3, LogoImg4, LogoImg5];
 
-    const containerRef = useRef(null);
+    const allLogos = [...Logos, ...Logos];
 
-    useEffect(() => {
-        // When component mounts and images load
-        if (containerRef.current) {
-        containerRef.current.classList.add("animate");
-        }
-    }, []);
     
     
     return (
@@ -49,11 +41,19 @@ const Client = () => {
                             ))}
                         </div>
                         <div className="business-logo-scroll-container">
-                            <div className="business-logo-scroll-container-scroll-div" ref={containerRef}>
-                                {[...Logos, ...Logos].map((logo) => (
-                                    <BusinessLogo logoPath={logo} />
+                            <motion.div 
+                            className="business-logo-scroll-container-scroll-div" 
+                            animate={{ x: ["0%", "-50%"] }}
+                            transition={{
+                            repeat: Infinity,
+                            duration: 20,
+                            ease: "linear",
+                            }}
+                            >
+                                {allLogos.map((logo, index) => (
+                                    <BusinessLogo key={index} logoPath={logo} />
                                 ))}
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
                 </div>
