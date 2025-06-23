@@ -314,7 +314,7 @@ body {
 
 @-webkit-keyframes spin {
   0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  100% { transform: rotate(360deg);}
 }
 
 @keyframes spin {
@@ -322,7 +322,7 @@ body {
   100% { transform: rotate(360deg); }
 }
 
-/* Optional fade in for site */
+
 .main-content {
   -webkit-animation: fadeIn 1s ease-in-out;
           animation: fadeIn 1s ease-in-out;
