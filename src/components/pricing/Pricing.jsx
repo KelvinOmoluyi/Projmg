@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import PriceBoard from './PriceBoard';
 import { useState } from 'react';
 
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
+
 const Pricing = () => {
     const pagesLinks = ["Features", "Integrations", "Reviews", "Contact"];
 
@@ -72,14 +74,14 @@ const Pricing = () => {
                     transition={{ duration: 0.7 }}
                     viewport={{ once: true, amount: 1 }}
                     className="overflow-hidden-container-inner">       
-                        <a href="/"><h3>PROJ.MG</h3></a>
+                        <Link to="/"><h3>PROJ.MG</h3></Link>
                     </motion.div>
                 </div>
                 <div className="nav-sections-link">
                     <ul>
                         {pagesLinks.map((pagelink, index) => (
                             <li key={index}>
-                                <a href={"/#"+pagelink}>
+                                <Link to={"/#"+pagelink}>
                                     <motion.p
                                     className="upRevealElement-inline"
                                     initial={{ filter: "blur(10px)", opacity: 0, y: 50 }}
@@ -87,7 +89,7 @@ const Pricing = () => {
                                     transition={{ duration: 1, delay: 0.05*index }}
                                     viewport={{ once: true, amount: 1 }}
                                     >{pagelink}</motion.p>
-                                </a>
+                                </Link>
                             </li>
                         ))}
                     </ul>
