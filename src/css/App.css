@@ -161,21 +161,59 @@ nav .nav-sections-link {
     padding: 0 2rem;
 }
 
-.business-owners-content .business-owners-content-scroll-container {
+.business-owners-content .business-owners-content-scroll-section {
     width: 100%;
     overflow-x: hidden;
     padding-left: 1rem;
 }
 
-.business-owners-content .business-owners-content-businesses-list {
-    display: flex;
-    min-width: 130rem;
-    justify-content: space-between;
+.business-owners-content .business-logo-scroll-container {
+  overflow: hidden;
+  width: 100%;
 }
 
-.business-owners-content-businesses-list img {
-    height: 4.8rem;
+.business-logo-scroll-container-scroll-div {
+  display: flex;
+  flex-wrap: nowrap;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content; /* ensures it's based on content width */
+  -webkit-animation: scroll 15s linear infinite;
+          animation: scroll 15s linear infinite;
 }
+
+.business-logo-scroll-container-scroll-div .scroll-item {
+  flex: 0 0 auto;
+  padding: 0 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.business-logo-scroll-container-scroll-div img {
+  height: 6rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+@-webkit-keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 
 
 
