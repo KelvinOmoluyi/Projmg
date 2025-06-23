@@ -15,7 +15,7 @@ const Main = () => {
 
 
     return (
-        <main className="main-section" id="Home">
+        <main className="main-section wrapper" id="Home">
         <header>
             <nav>
                 <div className="nav-logo">
@@ -62,7 +62,7 @@ const Main = () => {
         </header>
 
 
-        <div className="main-section-content wrapper">
+        <div className="main-section-content">
             <div className="main-section-content-words">
                 <div className="overflow-hidden-container-outer">
                     <motion.div 
