@@ -29,7 +29,7 @@ This landing page was crafted based on a Figma design, emphasizing pixel-perfect
 
 - **React.js** – Functional components and hooks
 - **Framer Motion** – Smooth entrance/exit and scroll-based animations
-- **CSS / TailwindCSS / Styled Components** – *(Specify what you used)*
+- **Vanilla CSS**
 - **Figma** – UI source design
 
 ---
@@ -39,8 +39,8 @@ This landing page was crafted based on a Figma design, emphasizing pixel-perfect
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/KelvinOmoluyi/propmg.git
-cd figma-landing-page
+git clone https://github.com/KelvinOmoluyi/projmg.git
+cd projmg
 ```
 ### 2. Install Dependencies
 ```bash
