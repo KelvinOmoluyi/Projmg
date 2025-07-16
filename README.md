@@ -21,7 +21,7 @@ This landing page was crafted based on a Figma design, emphasizing pixel-perfect
 - 📱 Fully responsive across desktop, tablet, and mobile
 - 🧩 Clean React component structure
 - ✨ Framer Motion animations for dynamic UI experience
-- 🌈 Modern CSS styling (can be Tailwind CSS / CSS Modules / SCSS – depending on what you used)
+- 🌈 Modern CSS styling
 
 ---
 
